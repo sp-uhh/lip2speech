@@ -20,14 +20,14 @@
 
 title: EARS Dataset
 logo: /assets/img/uhh_logo.svg
-email: julius.richter@uni-hamburg.de
+email: # your email address
 description: >- # this means to ignore newlines until "baseurl:"
   An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation
 domain: sp-uhh.github.io
-baseurl: "/ears_dataset/" # the subpath of your site, e.g. /blog
+baseurl: "/website_template/" # the subpath of your site, e.g. /blog
 url: "https://sp-uhh.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: JuliusRichter13
-github_username:  julius-richter
+twitter_username: # twitter username
+github_username: # github username
 
 # Build settings
 # theme: minima
