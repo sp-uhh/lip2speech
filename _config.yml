@@ -22,7 +22,7 @@ title: EARS Dataset
 logo: /assets/img/uhh_logo.svg
 email: # your email address
 description: >- # this means to ignore newlines until "baseurl:"
-  An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation
+  Template for a website using Jekyll and GitHub Pages.
 domain: sp-uhh.github.io
 baseurl: "/website_template/" # the subpath of your site, e.g. /blog
 url: "https://sp-uhh.github.io" # the base hostname & protocol for your site, e.g. http://example.com
