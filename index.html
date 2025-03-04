@@ -146,10 +146,10 @@ layout: default
 
 <p>
     Orig: <br>
-    <audio id="audioPlayerOrig" controls>
-        <source id="audioSourceNoisy" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/orig/SWiwSBLXS3k/00002.wav" type="audio/wav">
-        Your browser does not support the audio element.
-    </audio><br>
+    <video id="videoPlayerOrig" controls>
+        <source id="videoSourceOrig" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/orig/SWiwSBLXS3k/00002.mp4" type="video/mp4">
+        Your browser does not support the video element.
+    </video><br>
 
     Conv-TasNet <span class="reference" data-ref="convtasnet"></span>:<br>
     <audio id="audioPlayerConvTasNet" controls>
@@ -184,13 +184,13 @@ layout: default
 
 <script>
     function playAudio() {
-        var audioPlayerOrig = document.getElementById('audioPlayerOrig');
+        var videoPlayerOrig = document.getElementById('videoPlayerOrig');
         var audioPlayerConvTasNet = document.getElementById('audioPlayerConvTasNet');
         var audioPlayerCDiffuSE = document.getElementById('audioPlayerCDiffuSE');
         var audioPlayerDemucs = document.getElementById('audioPlayerDemucs');
         var audioPlayerSGMSE = document.getElementById('audioPlayerSGMSE');
         var audioPlayerClean = document.getElementById('audioPlayerClean');
-        var audioSourceNoisy = document.getElementById('audioSourceNoisy');
+        var videoSourceOrig = document.getElementById('videoSourceOrig');
         var audioSourceConvTasNet = document.getElementById('audioSourceConvTasNet');
         var audioSourceCDiffuSE = document.getElementById('audioSourceCDiffuSE');
         var audioSourceDemucs = document.getElementById('audioSourceDemucs');
@@ -200,8 +200,8 @@ layout: default
 
         if (selectedAudio) {
             // Set the source of the source elements, not the audio players
-            audioSourceNoisy.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-wham/noisy/" + selectedAudio + ".wav";
-            audioPlayerOrig.load(); // Load the selected audio file using the audio player
+            videoSourceOrig.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-wham/noisy/" + selectedAudio + ".wav";
+            videoPlayerOrig.load(); // Load the selected audio file using the audio player
 
             audioSourceConvTasNet.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-wham/convtasnet/" + selectedAudio + ".wav";
             audioPlayerConvTasNet.load(); // Load the selected audio file using the audio player
