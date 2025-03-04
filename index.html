@@ -157,6 +157,12 @@ layout: default
         Your browser does not support the video element.
     </video><br>
 
+    IL2S <span class="reference" data-ref="convtasnet"></span>:<br>
+    <video id="videoPlayerIL2S" controls>
+        <source id="videoSourceIL2S" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s/SWiwSBLXS3k/00002.mp4" type="audio/wav">
+        Your browser does not support the video element.
+    </video><br> 
+
     IL2S (AV-HuBERT) <span class="reference" data-ref="convtasnet"></span>:<br>
     <video id="videoPlayerIL2S_AVHuBERT" controls>
         <source id="videoSourceIL2S_AVHuBERT" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_avhubert/SWiwSBLXS3k/00002.mp4" type="audio/wav">
@@ -186,12 +192,14 @@ layout: default
     function playAudio() {
         var videoPlayerOrig = document.getElementById('videoPlayerOrig');
         var videoPlayerIL2S_AVHuBERT = document.getElementById('videoPlayerIL2S_AVHuBERT');
+        var videoPlayerIL2S = document.getElementById('videoPlayerIL2S');
         var videoPlayerEnhanced = document.getElementById('videoPlayerEnhanced');
         var audioPlayerDemucs = document.getElementById('audioPlayerDemucs');
         var audioPlayerSGMSE = document.getElementById('audioPlayerSGMSE');
         var audioPlayerClean = document.getElementById('audioPlayerClean');
         var videoSourceOrig = document.getElementById('videoSourceOrig');
         var videoSourceIL2S_AVHuBERT = document.getElementById('videoSourceIL2S_AVHuBERT');
+        var videoSourceIL2S = document.getElementById('videoSourceIL2S');
         var videoSourceEnhanced = document.getElementById('videoSourceEnhanced');
         var audioSourceDemucs = document.getElementById('audioSourceDemucs');
         var audioSourceSGMSE = document.getElementById('audioSourceSGMSE');
@@ -205,6 +213,9 @@ layout: default
 
             videoSourceIL2S_AVHuBERT.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_avhubert/" + selectedAudio + ".mp4";
             videoPlayerIL2S_AVHuBERT.load(); // Load the selected audio file using the audio player
+
+            videoSourceIL2S.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s/" + selectedAudio + ".mp4";
+            videoPlayerIL2S.load(); // Load the selected audio file using the audio player
 
             videoSourceEnhanced.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/enhanced/" + selectedAudio + ".mp4";
             videoPlayerEnhanced.load(); // Load the selected audio file using the audio player
