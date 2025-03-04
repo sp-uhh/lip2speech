@@ -18,13 +18,13 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Website Template
+title: Lip-to-Speech
 logo: /assets/img/uhh_logo.svg
 email: # your email address
 description: >- # this means to ignore newlines until "baseurl:"
-  Template for a website using Jekyll and GitHub Pages.
+  Lip-to-Speech baselines.
 domain: sp-uhh.github.io
-baseurl: "/website_template/" # the subpath of your site, e.g. /blog
+baseurl: "/lip2speech/" # the subpath of your site, e.g. /blog
 url: "https://sp-uhh.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: # twitter username
 github_username: # github username
