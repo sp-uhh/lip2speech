@@ -175,9 +175,9 @@ layout: default
         Your browser does not support the video element.
     </video><br>
 
-    DiffV2 <span class="reference" data-ref="sgmse"></span>:<br>
-    <video id="videoPlayerDiffV2" controls>
-        <source id="videoSourceDiffV2" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/diffv2/SWiwSBLXS3k/00002.mp4" type="video/mp4">
+    DiffV2S <span class="reference" data-ref="sgmse"></span>:<br>
+    <video id="videoPlayerDiffV2S" controls>
+        <source id="videoSourceDiffV2S" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/diffv2s/SWiwSBLXS3k/00002.mp4" type="video/mp4">
         Your browser does not support the video element.
     </video><br>
 
@@ -195,14 +195,14 @@ layout: default
         var videoPlayerIL2S = document.getElementById('videoPlayerIL2S');
         var videoPlayerEnhanced = document.getElementById('videoPlayerEnhanced');
         var videoPlayerLipvoicer = document.getElementById('videoPlayerLipvoicer');
-        var audioPlayerDiffV2 = document.getElementById('audioPlayerDiffV2');
+        var videoPlayerDiffV2S = document.getElementById('videoPlayerDiffV2S');
         var audioPlayerClean = document.getElementById('audioPlayerClean');
         var videoSourceOrig = document.getElementById('videoSourceOrig');
         var videoSourceIL2S_AVHuBERT = document.getElementById('videoSourceIL2S_AVHuBERT');
         var videoSourceIL2S = document.getElementById('videoSourceIL2S');
         var videoSourceEnhanced = document.getElementById('videoSourceEnhanced');
         var videoSourceLipvoicer = document.getElementById('videoSourceLipvoicer');
-        var audioSourceDiffV2 = document.getElementById('audioSourceDiffV2');
+        var videoSourceDiffV2S = document.getElementById('videoSourceDiffV2S');
         var audioSourceClean = document.getElementById('audioSourceClean');
         var selectedAudio = document.getElementById('audioSelect').value;
 
@@ -223,8 +223,8 @@ layout: default
             videoSourceLipvoicer.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipvoicer/" + selectedAudio + ".mp4";
             videoPlayerLipvoicer.load(); // Load the selected audio file using the audio player
 
-            audioSourceDiffV2.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/diffv2/" + selectedAudio + ".mp4";
-            audioPlayerDiffV2.load(); // Load the selected audio file using the audio player
+            videoSourceDiffV2S.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/diffv2s/" + selectedAudio + ".mp4";
+            videoPlayerDiffV2S.load(); // Load the selected audio file using the audio player
 
             audioSourceClean.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-wham/clean/" + selectedAudio + ".mp4";
             audioPlayerClean.load(); // Load the selected audio file using the audio player
