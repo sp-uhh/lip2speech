@@ -120,15 +120,15 @@ layout: default
 </style>
 
 <h1>
-    Audio-visual examples
+    Audio-Visual Examples
 </h1>
 
 <p>
-    LRS3 test set.
+    Here we provide audio-visual examples of our method compared to other methods. 
 </p>
 
 <h2>
-    Audio Examples
+    LRS3 Test Set
 </h2>
 
 <p>Select an audio file: &nbsp;&nbsp;
@@ -151,17 +151,17 @@ layout: default
         Your browser does not support the video element.
     </video><br>
 
+    Enhanced: <br>
+    <video id="videoPlayerEnhanced" controls>
+        <source id="videoSourceEnhanced" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/enhanced/SWiwSBLXS3k/00002.mp4" type="audio/wav">
+        Your browser does not support the video element.
+    </video><br>
+
     IL2S (AV-HuBERT) <span class="reference" data-ref="convtasnet"></span>:<br>
     <video id="videoPlayerIL2S_AVHuBERT" controls>
         <source id="videoSourceIL2S_AVHuBERT" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_avhubert/SWiwSBLXS3k/00002.mp4" type="audio/wav">
         Your browser does not support the video element.
-    </video><br>
-
-    CDiffuSE <span class="reference" data-ref="cdiffuse"></span>:<br>
-    <audio id="audioPlayerCDiffuSE" controls>
-        <source id="audioSourceCDiffuSE" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-wham/cdiffuse/p102/00252_4.9dB.wav" type="audio/wav">
-        Your browser does not support the audio element.
-    </audio><br>
+    </video><br> 
 
     Demucs <span class="reference" data-ref="demucs"></span>:<br>
     <audio id="audioPlayerDemucs" controls>
@@ -186,13 +186,13 @@ layout: default
     function playAudio() {
         var videoPlayerOrig = document.getElementById('videoPlayerOrig');
         var videoPlayerIL2S_AVHuBERT = document.getElementById('videoPlayerIL2S_AVHuBERT');
-        var audioPlayerCDiffuSE = document.getElementById('audioPlayerCDiffuSE');
+        var videoPlayerEnhanced = document.getElementById('videoPlayerEnhanced');
         var audioPlayerDemucs = document.getElementById('audioPlayerDemucs');
         var audioPlayerSGMSE = document.getElementById('audioPlayerSGMSE');
         var audioPlayerClean = document.getElementById('audioPlayerClean');
         var videoSourceOrig = document.getElementById('videoSourceOrig');
         var videoSourceIL2S_AVHuBERT = document.getElementById('videoSourceIL2S_AVHuBERT');
-        var audioSourceCDiffuSE = document.getElementById('audioSourceCDiffuSE');
+        var videoSourceEnhanced = document.getElementById('videoSourceEnhanced');
         var audioSourceDemucs = document.getElementById('audioSourceDemucs');
         var audioSourceSGMSE = document.getElementById('audioSourceSGMSE');
         var audioSourceClean = document.getElementById('audioSourceClean');
@@ -206,8 +206,8 @@ layout: default
             videoSourceIL2S_AVHuBERT.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_avhubert/" + selectedAudio + ".mp4";
             videoPlayerIL2S_AVHuBERT.load(); // Load the selected audio file using the audio player
 
-            audioSourceCDiffuSE.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-wham/cdiffuse/" + selectedAudio + ".mp4";
-            audioPlayerCDiffuSE.load(); // Load the selected audio file using the audio player
+            videoSourceEnhanced.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/enhanced/" + selectedAudio + ".mp4";
+            videoPlayerEnhanced.load(); // Load the selected audio file using the audio player
 
             audioSourceDemucs.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-wham/demucs/" + selectedAudio + ".mp4";
             audioPlayerDemucs.load(); // Load the selected audio file using the audio player
@@ -223,16 +223,6 @@ layout: default
         }
     }
 </script>
-<br>
-
-<h2>
-    Youtube embedding 
-</h2>
-
-<div class="video-container">
-    <iframe src="https://www.youtube.com/embed/H5FiO0JxPK4" frameborder="0" allowfullscreen></iframe>
-</div>
-
 <br>
 
 <h2 id="citation">
