@@ -146,9 +146,10 @@ layout: default
 
 <p>
     Orig: <br>
-    <video id="videoPlayerOrig" controls crossorigin playsinline>
-        <source id="videoSourceOrig" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/orig/SWiwSBLXS3k/00002.mp4" type="video/mp4" />
-      </video><br>
+    <video id="videoPlayerOrig" controls>
+        <source id="videoSourceOrig" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/orig/SWiwSBLXS3k/00002.mp4" type="video/mp4">
+        Your browser does not support the video element.
+    </video><br>
 
     Conv-TasNet <span class="reference" data-ref="convtasnet"></span>:<br>
     <audio id="audioPlayerConvTasNet" controls>
@@ -180,11 +181,6 @@ layout: default
         Your browser does not support the audio element.
     </audio>
 </p>
-
-<script src="https://cdn.plyr.io/3.7.2/plyr.polyfilled.js"></script>
-<script>
-    const player = new Plyr('video');
-</script>
 
 <script>
     function playAudio() {
