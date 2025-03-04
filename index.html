@@ -120,64 +120,34 @@ layout: default
 </style>
 
 <h1>
-    Headline
+    Audio-visual examples
 </h1>
 
 <p>
-    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore 
-    magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd 
-    gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing 
-    elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero 
-    eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum 
-    dolor sit amet.
+    LRS3 test set.
 </p>
 
 <h2>
     Audio Examples
 </h2>
 
-<p>
-    p002/emo_adoration_sentences.wav<br>
-    <audio controls>
-        <source src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears/p002_emo_adoration_sentences.wav" type="audio/wav">
-        Your browser does not support the audio element.
-    </audio>
-    <br>
-
-    p008/emo_contentment_sentences.wav<br>
-    <audio controls>
-        <source src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears/p008_emo_contentment_sentences.wav" type="audio/wav">
-        Your browser does not support the audio element.
-        </audio>
-    <br>
-
-    p010/emo_cuteness_sentences.wav<br>
-    <audio controls>
-        <source src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears/p010_emo_cuteness_sentences.wav" type="audio/wav">
-        Your browser does not support the audio element.
-    </audio>
-    <br>
-</p>
-
-<h3>
-    With dropdown menu 
-</h3>
-
 <p>Select an audio file: &nbsp;&nbsp;
     <select id="audioSelect" onchange="playAudio()">
-        <option value="p102/00252_4.9dB">p102/00252_4.9dB</option>
-    <option value="p103/00464_11.8dB">p103/00464_11.8dB</option>
-    <option value="p104/00814_11.3dB">p104/00814_11.3dB</option>
-    <option value="p105/00735_0.4dB">p105/00735_0.4dB</option>
-    <option value="p106/00049_5.4dB">p106/00049_5.4dB</option>
-    <option value="p107/00519_8.1dB">p107/00519_8.1dB</option>
+        <option value="SWiwSBLXS3k/00002">SWiwSBLXS3k/00002</option>
+        <option value="J8FyHI00ELY/00004">J8FyHI00ELY/00004</option>
+        <option value="vXPJVwwEmiM/00008">vXPJVwwEmiM/00008</option>
+        <option value="9JKy6ZfmBn0/00002">9JKy6ZfmBn0/00002</option>
+        <option value="sxnlvwprfSc/00011">sxnlvwprfSc/00011</option>
+        <option value="8nt3edWLgIg/00004">8nt3edWLgIg/00004</option>
+        <option value="1bnzVjOJ6NM/00011">1bnzVjOJ6NM/00011</option>
+        <option value="M7KSnq0xkWY/00001">M7KSnq0xkWY/00001</option>
     </select>
 </p>
 
 <p>
-    Noisy: <br>
-    <audio id="audioPlayerNoisy" controls>
-        <source id="audioSourceNoisy" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-wham/noisy/p102/00252_4.9dB.wav" type="audio/wav">
+    Orig: <br>
+    <audio id="audioPlayerOrig" controls>
+        <source id="audioSourceNoisy" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/orig/SWiwSBLXS3k/00002.wav" type="audio/wav">
         Your browser does not support the audio element.
     </audio><br>
 
@@ -214,7 +184,7 @@ layout: default
 
 <script>
     function playAudio() {
-        var audioPlayerNoisy = document.getElementById('audioPlayerNoisy');
+        var audioPlayerOrig = document.getElementById('audioPlayerOrig');
         var audioPlayerConvTasNet = document.getElementById('audioPlayerConvTasNet');
         var audioPlayerCDiffuSE = document.getElementById('audioPlayerCDiffuSE');
         var audioPlayerDemucs = document.getElementById('audioPlayerDemucs');
@@ -231,7 +201,7 @@ layout: default
         if (selectedAudio) {
             // Set the source of the source elements, not the audio players
             audioSourceNoisy.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-wham/noisy/" + selectedAudio + ".wav";
-            audioPlayerNoisy.load(); // Load the selected audio file using the audio player
+            audioPlayerOrig.load(); // Load the selected audio file using the audio player
 
             audioSourceConvTasNet.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-wham/convtasnet/" + selectedAudio + ".wav";
             audioPlayerConvTasNet.load(); // Load the selected audio file using the audio player
