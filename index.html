@@ -120,19 +120,19 @@ layout: default
 </style>
 
 <h1>
-    Audio-Visual Examples
+    Video Examples
 </h1>
 
 <p>
-    Here we provide audio-visual examples of our method compared to other methods. 
+    Here we provide video examples of our method compared to other methods. 
 </p>
 
 <h2>
     LRS3 Test Set
 </h2>
 
-<p>Select an audio file: &nbsp;&nbsp;
-    <select id="audioSelect" onchange="playAudio()">
+<p>Select a video file: &nbsp;&nbsp;
+    <select id="videoSelect" onchange="playAudio()">
         <option value="SWiwSBLXS3k/00002">SWiwSBLXS3k/00002</option>
         <option value="J8FyHI00ELY/00004">J8FyHI00ELY/00004</option>
         <option value="vXPJVwwEmiM/00008">vXPJVwwEmiM/00008</option>
@@ -197,7 +197,7 @@ layout: default
         var videoSourceEnhanced = document.getElementById('videoSourceEnhanced');
         var videoSourceLipvoicer = document.getElementById('videoSourceLipvoicer');
         var videoSourceDiffV2S = document.getElementById('videoSourceDiffV2S');
-        var selectedAudio = document.getElementById('audioSelect').value;
+        var selectedAudio = document.getElementById('videoSelect').value;
 
         if (selectedAudio) {
             // Set the source of the source elements, not the audio players
@@ -231,17 +231,17 @@ layout: default
 </h2>
 
 <div class="container">
-    <div class="inner-container" dir="auto" data-snippet-clipboard-copy-content="{% raw %}@inproceedings{richter2024ears,
-    title={{EARS}: An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation},
-    author={Richter, Julius and Wu, Yi-Chiao and Krenn, Steven and Welker, Simon and Lay, Bunlong and Watanabe, Shinjii and Richard, Alexander and Gerkmann, Timo},
-    booktitle={ISCA Interspeech},
-    year={2024}
+    <div class="inner-container" dir="auto" data-snippet-clipboard-copy-content="{% raw %}@inproceedings{oliveira2025lipdiffuser,
+    title={{LipDiffuser:} Lip-to-Speech Generation with Conditional Diffusion Models},
+    author={de Oliveira, Danilo and Richter, Julius and Peer, Tal and Gerkmann, Timo},
+    booktitle={Not determined yet},
+    year={2025}
 }{% endraw %}">
-<pre><code>{% raw %}@inproceedings{richter2024ears,
-    title={{EARS}: An Anechoic Fullband Speech Dataset Benchmarked for Speech Enhancement and Dereverberation},
-    author={Richter, Julius and Wu, Yi-Chiao and Krenn, Steven and Welker, Simon and Lay, Bunlong and Watanabe, Shinjii and Richard, Alexander and Gerkmann, Timo},
-    booktitle={ISCA Interspeech},
-    year={2024}
+<pre><code>{% raw %}@inproceedings{oliveira2025lipdiffuser,
+    title={{LipDiffuser:} Lip-to-Speech Generation with Conditional Diffusion Models},
+    author={de Oliveira, Danilo and Richter, Julius and Peer, Tal and Gerkmann, Timo},
+    booktitle={Not determined yet},
+    year={2025}
 }{% endraw %}</code></pre>
     </div>
     <button id="copyButton" class="highlight">
