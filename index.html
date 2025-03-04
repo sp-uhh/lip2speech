@@ -157,35 +157,30 @@ layout: default
         Your browser does not support the video element.
     </video><br>
 
-    IL2S <span class="reference" data-ref="convtasnet"></span>:<br>
+    IL2S <span class="reference" data-ref="il2s"></span>:<br>
     <video id="videoPlayerIL2S" controls>
         <source id="videoSourceIL2S" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s/SWiwSBLXS3k/00002.mp4" type="video/mp4">
         Your browser does not support the video element.
     </video><br> 
 
-    IL2S (AV-HuBERT) <span class="reference" data-ref="convtasnet"></span>:<br>
+    IL2S (AV-HuBERT) <span class="reference" data-ref="il2s"></span>:<br>
     <video id="videoPlayerIL2S_AVHuBERT" controls>
         <source id="videoSourceIL2S_AVHuBERT" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_avhubert/SWiwSBLXS3k/00002.mp4" type="video/mp4">
         Your browser does not support the video element.
     </video><br> 
 
-    Lipvoicer <span class="reference" data-ref="demucs"></span>:<br>
+    Lipvoicer <span class="reference" data-ref="lipvoicer"></span>:<br>
     <video id="videoPlayerLipvoicer" controls>
         <source id="videoSourceLipvoicer" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipvoicer/SWiwSBLXS3k/00002.mp4" type="video/mp4">
         Your browser does not support the video element.
     </video><br>
 
-    DiffV2S <span class="reference" data-ref="sgmse"></span>:<br>
+    DiffV2S <span class="reference" data-ref="diffv2s"></span>:<br>
     <video id="videoPlayerDiffV2S" controls>
         <source id="videoSourceDiffV2S" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/diffv2s/SWiwSBLXS3k/00002.mp4" type="video/mp4">
         Your browser does not support the video element.
     </video><br>
 
-    Clean: <br>
-    <audio id="audioPlayerClean" controls>
-        <source id="audioSourceClean" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-wham/clean/p102/00252_4.9dB.wav" type="video/mp4">
-        Your browser does not support the audio element.
-    </audio>
 </p>
 
 <script>
@@ -196,14 +191,12 @@ layout: default
         var videoPlayerEnhanced = document.getElementById('videoPlayerEnhanced');
         var videoPlayerLipvoicer = document.getElementById('videoPlayerLipvoicer');
         var videoPlayerDiffV2S = document.getElementById('videoPlayerDiffV2S');
-        var audioPlayerClean = document.getElementById('audioPlayerClean');
         var videoSourceOrig = document.getElementById('videoSourceOrig');
         var videoSourceIL2S_AVHuBERT = document.getElementById('videoSourceIL2S_AVHuBERT');
         var videoSourceIL2S = document.getElementById('videoSourceIL2S');
         var videoSourceEnhanced = document.getElementById('videoSourceEnhanced');
         var videoSourceLipvoicer = document.getElementById('videoSourceLipvoicer');
         var videoSourceDiffV2S = document.getElementById('videoSourceDiffV2S');
-        var audioSourceClean = document.getElementById('audioSourceClean');
         var selectedAudio = document.getElementById('audioSelect').value;
 
         if (selectedAudio) {
@@ -225,9 +218,6 @@ layout: default
 
             videoSourceDiffV2S.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/diffv2s/" + selectedAudio + ".mp4";
             videoPlayerDiffV2S.load(); // Load the selected audio file using the audio player
-
-            audioSourceClean.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-wham/clean/" + selectedAudio + ".mp4";
-            audioPlayerClean.load(); // Load the selected audio file using the audio player
 
             // This will ensure that the audio players are updating their children source elements
             // and reloading them
@@ -289,6 +279,9 @@ layout: default
             "cdiffuse": "Y.-J. Lu, Z.-Q. Wang, S. Watanabe, A. Richard, C. Yu, and Y. Tsao, “Conditional diffusion probabilistic model for speech enhancement,” in IEEE International Conference on Acoustics, Speech and Signal Processing, 2022, pp. 7402–7406.",
             "demucs": "S. Rouard, F. Massa, and A. Défossez, “Hybrid transformers for music source separation,” in IEEE International Conference on Acoustics, Speech and Signal Processing, 2023.",
             "sgmse": "J. Richter, S. Welker, J.-M. Lemercier, B. Lay, and T. Gerkmann, “Speech enhancement and dereverberation with diffusion-based generative models,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol. 31, pp. 2351–2364, 2023.",
+            "diffv2s": "Jeongsoo Choi, Joanna Hong, and Yong Man Ro. Diffv2s: Diffusion-based video-to-speech synthesis with vision-guided speaker embedding. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 7812–7821, 2023.",
+            "lipvoicer": "Yochai Yemini, Aviv Shamsian, Lior Bracha, Sharon Gannot, and Ethan Fetaya. LipVoicer: Generating speech from silent videos guided by lip reading. In International Conference on Learning Representations, 2024.",
+            "il2s": "Jeongsoo Choi, Minsu Kim, and Yong Man Ro. Intelligible lip-to-speech synthesis with speech units. In ISCA Interspeech, pages 4349–4353, 2023.",
         };
 
         // Collect keys in order of their appearance, without duplication
