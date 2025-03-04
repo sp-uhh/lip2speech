@@ -152,10 +152,10 @@ layout: default
     </video><br>
 
     IL2S (AV-HuBERT) <span class="reference" data-ref="convtasnet"></span>:<br>
-    <audio id="audioPlayerIL2S_AVHuBERT" controls>
-        <source id="audioSourceIL2S_AVHuBERT" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_avhubert/SWiwSBLXS3k/00002.mp4" type="audio/wav">
-        Your browser does not support the audio element.
-    </audio><br>
+    <video id="videoPlayerIL2S_AVHuBERT" controls>
+        <source id="videoSourceIL2S_AVHuBERT" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_avhubert/SWiwSBLXS3k/00002.mp4" type="audio/wav">
+        Your browser does not support the video element.
+    </video><br>
 
     CDiffuSE <span class="reference" data-ref="cdiffuse"></span>:<br>
     <audio id="audioPlayerCDiffuSE" controls>
@@ -185,13 +185,13 @@ layout: default
 <script>
     function playAudio() {
         var videoPlayerOrig = document.getElementById('videoPlayerOrig');
-        var audioPlayerIL2S_AVHuBERT = document.getElementById('audioPlayerIL2S_AVHuBERT');
+        var videoPlayerIL2S_AVHuBERT = document.getElementById('videoPlayerIL2S_AVHuBERT');
         var audioPlayerCDiffuSE = document.getElementById('audioPlayerCDiffuSE');
         var audioPlayerDemucs = document.getElementById('audioPlayerDemucs');
         var audioPlayerSGMSE = document.getElementById('audioPlayerSGMSE');
         var audioPlayerClean = document.getElementById('audioPlayerClean');
         var videoSourceOrig = document.getElementById('videoSourceOrig');
-        var audioSourceIL2S_AVHuBERT = document.getElementById('audioSourceIL2S_AVHuBERT');
+        var videoSourceIL2S_AVHuBERT = document.getElementById('videoSourceIL2S_AVHuBERT');
         var audioSourceCDiffuSE = document.getElementById('audioSourceCDiffuSE');
         var audioSourceDemucs = document.getElementById('audioSourceDemucs');
         var audioSourceSGMSE = document.getElementById('audioSourceSGMSE');
@@ -203,8 +203,8 @@ layout: default
             videoSourceOrig.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/orig/" + selectedAudio + ".mp4";
             videoPlayerOrig.load(); // Load the selected audio file using the audio player
 
-            audioSourceIL2S_AVHuBERT.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_avhubert/" + selectedAudio + ".mp4";
-            audioPlayerIL2S_AVHuBERT.load(); // Load the selected audio file using the audio player
+            videoSourceIL2S_AVHuBERT.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_avhubert/" + selectedAudio + ".mp4";
+            videoPlayerIL2S_AVHuBERT.load(); // Load the selected audio file using the audio player
 
             audioSourceCDiffuSE.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/interspeech2024-ears/files/ears-wham/cdiffuse/" + selectedAudio + ".mp4";
             audioPlayerCDiffuSE.load(); // Load the selected audio file using the audio player
