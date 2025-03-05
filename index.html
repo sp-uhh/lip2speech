@@ -199,6 +199,12 @@ layout: default
         Your browser does not support the video element.
     </video><br>
 
+    LipDiffuser (run8/5242880):<br>
+    <video id="videoPlayerLipDiffuserRun8_5242880" controls>
+        <source id="videoSourceLipDiffuserRun8_5242880" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run8/5242880/SWiwSBLXS3k/00002.mp4" type="video/mp4">
+        Your browser does not support the video element.
+    </video><br>
+
 </p>
 
 <script>
@@ -224,6 +230,9 @@ layout: default
 
         var videoPlayerLipDiffuserRun8_4194304 = document.getElementById('videoPlayerLipDiffuserRun8_4194304');
         var videoSourceLipDiffuserRun8_4194304 = document.getElementById('videoSourceLipDiffuserRun8_4194304');
+
+        var videoPlayerLipDiffuserRun8_5242880 = document.getElementById('videoPlayerLipDiffuserRun8_5242880');
+        var videoSourceLipDiffuserRun8_5242880 = document.getElementById('videoSourceLipDiffuserRun8_5242880');
 
     
         var selectedAudio = document.getElementById('videoSelect').value;
@@ -256,6 +265,9 @@ layout: default
 
             videoSourceLipDiffuserRun8_4194304.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run8/4194304/" + selectedAudio + ".mp4";
             videoPlayerLipDiffuserRun8_4194304.load(); // Load the selected audio file using the audio player
+
+            videoSourceLipDiffuserRun8_5242880.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run8/5242880/" + selectedAudio + ".mp4";
+            videoPlayerLipDiffuserRun8_5242880.load(); // Load the selected audio file using the audio player
             
             // This will ensure that the audio players are updating their children source elements
             // and reloading them
