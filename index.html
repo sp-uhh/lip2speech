@@ -144,74 +144,113 @@ layout: default
     </select>
 </p>
 
-<p>
-    Orig: <br>
-    <video id="videoPlayerOrig" controls>
-        <source id="videoSourceOrig" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/orig/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-        Your browser does not support the video element.
-    </video><br>
 
-    Enhanced: <br>
-    <video id="videoPlayerEnhanced" controls>
-        <source id="videoSourceEnhanced" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/enhanced/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-        Your browser does not support the video element.
-    </video><br>
 
-    IL2S <span class="reference" data-ref="il2s"></span>:<br>
-    <video id="videoPlayerIL2S" controls>
-        <source id="videoSourceIL2S" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-        Your browser does not support the video element.
-    </video><br> 
-
-    IL2S (AV-HuBERT) <span class="reference" data-ref="il2s"></span>:<br>
-    <video id="videoPlayerIL2S_AVHuBERT" controls>
-        <source id="videoSourceIL2S_AVHuBERT" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_avhubert/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-        Your browser does not support the video element.
-    </video><br> 
-
-    Lipvoicer <span class="reference" data-ref="lipvoicer"></span>:<br>
-    <video id="videoPlayerLipvoicer" controls>
-        <source id="videoSourceLipvoicer" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipvoicer/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-        Your browser does not support the video element.
-    </video><br>
-
-    DiffV2S <span class="reference" data-ref="diffv2s"></span>:<br>
-    <video id="videoPlayerDiffV2S" controls>
-        <source id="videoSourceDiffV2S" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/diffv2s/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-        Your browser does not support the video element.
-    </video><br>
-
-    LipDiffuser (run8/2097152):<br>
-    <video id="videoPlayerLipDiffuser" controls>
-        <source id="videoSourceLipDiffuser" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run8/2097152/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-        Your browser does not support the video element.
-    </video><br>
-
-    LipDiffuser (run8/3145728):<br>
-    <video id="videoPlayerLipDiffuserRun8_3145728" controls>
-        <source id="videoSourceLipDiffuserRun8_3145728" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run8/3145728/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-        Your browser does not support the video element.
-    </video><br>
-
-    LipDiffuser (run8/4194304):<br>
-    <video id="videoPlayerLipDiffuserRun8_4194304" controls>
-        <source id="videoSourceLipDiffuserRun8_4194304" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run8/4194304/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-        Your browser does not support the video element.
-    </video><br>
-
-    LipDiffuser (run8/5242880):<br>
-    <video id="videoPlayerLipDiffuserRun8_5242880" controls>
-        <source id="videoSourceLipDiffuserRun8_5242880" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run8/5242880/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-        Your browser does not support the video element.
-    </video><br>
-
-    LipDiffuser (run9/2097152):<br>
-    <video id="videoPlayerLipDiffuserRun9_2097152" controls>
-        <source id="videoSourceLipDiffuserRun9_2097152" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run9/2097152/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-        Your browser does not support the video element.
-    </video><br>
-
-</p>
+<table>
+    <tr>
+        <th>Original Video</th>
+        <th>Enhanced Video</th>
+    </tr>
+    <tr>
+        <td>
+            <video id="videoPlayerOrig" controls>
+                <source id="videoSourceOrig" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/orig/SWiwSBLXS3k/00002.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </td>
+        <td>
+            <video id="videoPlayerEnhanced" controls>
+                <source id="videoSourceEnhanced" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/enhanced/SWiwSBLXS3k/00002.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </td>
+    </tr>
+    <tr>
+        <th>IL2S</th>
+        <th>IL2S (AV-HuBERT)</th>
+    </tr>
+    <tr>
+        <td>
+            <video id="videoPlayerIL2S" controls>
+                <source id="videoSourceIL2S" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s/SWiwSBLXS3k/00002.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </td>
+        <td>
+            <video id="videoPlayerIL2S_AVHuBERT" controls>
+                <source id="videoSourceIL2S_AVHuBERT" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_avhubert/SWiwSBLXS3k/00002.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </td>
+    </tr>
+    <tr>
+        <th>Lipvoicer</th>
+        <th>DiffV2S</th>
+    </tr>
+    <tr>
+        <td>
+            <video id="videoPlayerLipvoicer" controls>
+                <source id="videoSourceLipvoicer" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipvoicer/SWiwSBLXS3k/00002.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </td>
+        <td>
+            <video id="videoPlayerDiffV2S" controls>
+                <source id="videoSourceDiffV2S" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/diffv2s/SWiwSBLXS3k/00002.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </td>
+    </tr>
+    <tr>
+        <th>LipDiffuser (run8/2097152)</th>
+        <th>LipDiffuser (run8/3145728)</th>
+    </tr>
+    <tr>
+        <td>
+            <video id="videoPlayerLipDiffuser" controls>
+                <source id="videoSourceLipDiffuser" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run8/2097152/SWiwSBLXS3k/00002.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </td>
+        <td>
+            <video id="videoPlayerLipDiffuserRun8_3145728" controls>
+                <source id="videoSourceLipDiffuserRun8_3145728" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run8/3145728/SWiwSBLXS3k/00002.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </td>
+    </tr>
+    <tr>
+        <th>LipDiffuser (run8/4194304)</th>
+        <th>LipDiffuser (run8/5242880)</th>
+    </tr>
+    <tr>
+        <td>
+            <video id="videoPlayerLipDiffuserRun8_4194304" controls>
+                <source id="videoSourceLipDiffuserRun8_4194304" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run8/4194304/SWiwSBLXS3k/00002.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </td>
+        <td>
+            <video id="videoPlayerLipDiffuserRun8_5242880" controls>
+                <source id="videoSourceLipDiffuserRun8_5242880" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run8/5242880/SWiwSBLXS3k/00002.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </td>
+    </tr>
+    <tr>
+        <th>LipDiffuser (run9/2097152)</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            <video id="videoPlayerLipDiffuserRun9_2097152" controls>
+                <source id="videoSourceLipDiffuserRun9_2097152" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run9/2097152/SWiwSBLXS3k/00002.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </td>
+        <td></td>
+    </tr>
+</table>
 
 <script>
     function playAudio() {
