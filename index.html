@@ -285,6 +285,18 @@ layout: default
             </video>
         </td>
     </tr>
+    <tr>
+        <th>LipDiffuser (run11/7340032_aligned)</th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>
+            <video id="videoPlayerLipDiffuserRun11_0007340_aligned" controls>
+                <source id="videoSourceLipDiffuserRun11_0007340_aligned" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run11/0007340_aligned/SWiwSBLXS3k/00002.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+        </td>
+        <td></td>
 </table>
 
 <script>
@@ -328,6 +340,9 @@ layout: default
         
         var videoPlayerLipDiffuserRun11_7340032 = document.getElementById('videoPlayerLipDiffuserRun11_7340032');
         var videoSourceLipDiffuserRun11_7340032 = document.getElementById('videoSourceLipDiffuserRun11_7340032');
+
+        var videoPlayerLipDiffuserRun11_0007340_aligned = document.getElementById('videoPlayerLipDiffuserRun11_0007340_aligned');
+        var videoSourceLipDiffuserRun11_0007340_aligned = document.getElementById('videoSourceLipDiffuserRun11_0007340_aligned');
 
         var selectedAudio = document.getElementById('videoSelect').value;
 
@@ -377,6 +392,9 @@ layout: default
 
             videoSourceLipDiffuserRun11_7340032.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run11/7340032/" + selectedAudio + ".mp4";
             videoPlayerLipDiffuserRun11_7340032.load(); // Load the selected audio file using the audio player
+
+            videoSourceLipDiffuserRun11_0007340_aligned.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run11/0007340_aligned/" + selectedAudio + ".mp4";
+            videoPlayerLipDiffuserRun11_0007340_aligned.load(); // Load the selected audio file using the audio player
 
             // This will ensure that the audio players are updating their children source elements
             // and reloading them
