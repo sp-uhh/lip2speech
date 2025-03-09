@@ -249,6 +249,8 @@ layout: default
         var videoSourceLipvoicer = document.getElementById('videoSourceLipvoicer');
         var videoSourceDiffV2S = document.getElementById('videoSourceDiffV2S');
 
+        var videoPlayerLipDiffuserRun11_7340032 = document.getElementById('videoPlayerLipDiffuserRun11_7340032');
+        var videoSourceLipDiffuserRun11_7340032 = document.getElementById('videoSourceLipDiffuserRun11_7340032');
 
         var videoPlayerLipDiffuserRun11_0007340_aligned = document.getElementById('videoPlayerLipDiffuserRun11_0007340_aligned');
         var videoSourceLipDiffuserRun11_0007340_aligned = document.getElementById('videoSourceLipDiffuserRun11_0007340_aligned');
@@ -277,6 +279,9 @@ layout: default
 
             videoSourceDiffV2S.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/diffv2s/" + selectedAudio + ".mp4";
             videoPlayerDiffV2S.load(); // Load the selected audio file using the audio player
+
+            videoSourceLipDiffuserRun11_7340032.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run11/7340032/" + selectedAudio + ".mp4";
+            videoPlayerLipDiffuserRun11_7340032.load(); // Load the selected audio file using the audio player
 
             videoSourceLipDiffuserRun11_0007340_aligned.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run11/0007340_aligned/" + selectedAudio + ".mp4";
             videoPlayerLipDiffuserRun11_0007340_aligned.load(); // Load the selected audio file using the audio player
