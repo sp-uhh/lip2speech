@@ -144,144 +144,96 @@ layout: default
     </select>
 </p>
 
-
-
-<table>
-    <tr>
-        <th>Original Video</th>
-        <th>Enhanced Video</th>
-    </tr>
-    <tr>
-        <td>
-            <video id="videoPlayerOrig" controls>
-                <source id="videoSourceOrig" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/orig/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-                Your browser does not support the video element.
-            </video>
-        </td>
-        <td>
-            <video id="videoPlayerEnhanced" controls>
-                <source id="videoSourceEnhanced" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/enhanced/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-                Your browser does not support the video element.
-            </video>
-        </td>
-    </tr>
-    <tr>
-        <th>IL2S</th>
-        <th>IL2S (AV-HuBERT)</th>
-    </tr>
-    <tr>
-        <td>
-            <video id="videoPlayerIL2S" controls>
-                <source id="videoSourceIL2S" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-                Your browser does not support the video element.
-            </video>
-        </td>
-        <td>
-            <video id="videoPlayerIL2S_AVHuBERT" controls>
-                <source id="videoSourceIL2S_AVHuBERT" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_avhubert/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-                Your browser does not support the video element.
-            </video>
-        </td>
-    </tr>
-    <tr>
-        <th>Lipvoicer</th>
-        <th>DiffV2S</th>
-    </tr>
-    <tr>
-        <td>
-            <video id="videoPlayerLipvoicer" controls>
-                <source id="videoSourceLipvoicer" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipvoicer/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-                Your browser does not support the video element.
-            </video>
-        </td>
-        <td>
-            <video id="videoPlayerDiffV2S" controls>
-                <source id="videoSourceDiffV2S" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/diffv2s/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-                Your browser does not support the video element.
-            </video>
-        </td>
-    </tr>
-    <tr>
-        <th>LipDiffuser (run11)</th>
-        <th>LipDiffuser (run12)</th>
-    </tr>
-    <tr>
-        <td>
-            <video id="videoPlayerLipDiffuserRun11_0007340_aligned" controls>
-                <source id="videoSourceLipDiffuserRun11_0007340_aligned" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run11/0007340_aligned/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-                Your browser does not support the video element.
-            </video>
-        </td>
-        <td>
-            <video id="videoPlayerLipDiffuserRun12_000838" controls>
-                <source id="videoSourceLipDiffuserRun12_000838" src="https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run12/000838/SWiwSBLXS3k/00002.mp4" type="video/mp4">
-                Your browser does not support the video element.
-            </video>
-        </td>
-    </tr>
-</table>
+<div id="videoTableContainer"></div>
 
 <script>
+    // Configuration for the table structure
+    const tableConfig = [
+        {
+            header: ["Original Video", "Enhanced Video"],
+            rows: [
+                { playerId: "videoPlayerOrig", sourceId: "videoSourceOrig", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/orig/" },
+                { playerId: "videoPlayerEnhanced", sourceId: "videoSourceEnhanced", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/enhanced/" }
+            ]
+        },
+        {
+            header: ["IL2S", "IL2S (AV-HuBERT)"],
+            rows: [
+                { playerId: "videoPlayerIL2S", sourceId: "videoSourceIL2S", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s/" },
+                { playerId: "videoPlayerIL2S_AVHuBERT", sourceId: "videoSourceIL2S_AVHuBERT", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_avhubert/" }
+            ]
+        },
+        {
+            header: ["Lipvoicer", "DiffV2S"],
+            rows: [
+                { playerId: "videoPlayerLipvoicer", sourceId: "videoSourceLipvoicer", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipvoicer/" },
+                { playerId: "videoPlayerDiffV2S", sourceId: "videoSourceDiffV2S", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/diffv2s/" }
+            ]
+        },
+        {
+            header: ["LipDiffuser (run11)", "LipDiffuser (run12)"],
+            rows: [
+                { playerId: "videoPlayerLipDiffuserRun11_0007340_aligned", sourceId: "videoSourceLipDiffuserRun11_0007340_aligned", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run11/0007340_aligned/" },
+                { playerId: "videoPlayerLipDiffuserRun12_000838", sourceId: "videoSourceLipDiffuserRun12_000838", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run12/000838/" }
+            ]
+        }
+    ];
+
+    // Function to generate the table dynamically
+    function generateTable() {
+        const container = document.getElementById("videoTableContainer");
+        const table = document.createElement("table");
+
+        tableConfig.forEach(section => {
+            // Add header row
+            const headerRow = document.createElement("tr");
+            section.header.forEach(headerText => {
+                const th = document.createElement("th");
+                th.textContent = headerText;
+                headerRow.appendChild(th);
+            });
+            table.appendChild(headerRow);
+
+            // Add video rows
+            const videoRow = document.createElement("tr");
+            section.rows.forEach(video => {
+                const td = document.createElement("td");
+                const videoElement = document.createElement("video");
+                videoElement.id = video.playerId;
+                videoElement.controls = true;
+                const sourceElement = document.createElement("source");
+                sourceElement.id = video.sourceId;
+                sourceElement.src = video.baseUrl + "SWiwSBLXS3k/00002.mp4"; // Default video
+                sourceElement.type = "video/mp4";
+                videoElement.appendChild(sourceElement);
+                td.appendChild(videoElement);
+                videoRow.appendChild(td);
+            });
+            table.appendChild(videoRow);
+        });
+
+        container.appendChild(table);
+    }
+
+    // Function to update video sources
     function playAudio() {
-        var videoPlayerOrig = document.getElementById('videoPlayerOrig');
-        var videoPlayerIL2S_AVHuBERT = document.getElementById('videoPlayerIL2S_AVHuBERT');
-        var videoPlayerIL2S = document.getElementById('videoPlayerIL2S');
-        var videoPlayerEnhanced = document.getElementById('videoPlayerEnhanced');
-        var videoPlayerLipvoicer = document.getElementById('videoPlayerLipvoicer');
-        var videoPlayerDiffV2S = document.getElementById('videoPlayerDiffV2S');
-        var videoSourceOrig = document.getElementById('videoSourceOrig');
-        var videoSourceIL2S_AVHuBERT = document.getElementById('videoSourceIL2S_AVHuBERT');
-        var videoSourceIL2S = document.getElementById('videoSourceIL2S');
-        var videoSourceEnhanced = document.getElementById('videoSourceEnhanced');
-        var videoSourceLipvoicer = document.getElementById('videoSourceLipvoicer');
-        var videoSourceDiffV2S = document.getElementById('videoSourceDiffV2S');
-
-        var videoPlayerLipDiffuserRun11_7340032 = document.getElementById('videoPlayerLipDiffuserRun11_7340032');
-        var videoSourceLipDiffuserRun11_7340032 = document.getElementById('videoSourceLipDiffuserRun11_7340032');
-
-        var videoPlayerLipDiffuserRun11_0007340_aligned = document.getElementById('videoPlayerLipDiffuserRun11_0007340_aligned');
-        var videoSourceLipDiffuserRun11_0007340_aligned = document.getElementById('videoSourceLipDiffuserRun11_0007340_aligned');
-
-        var videoPlayerLipDiffuserRun12_000838 = document.getElementById('videoPlayerLipDiffuserRun12_000838');
-        var videoSourceLipDiffuserRun12_000838 = document.getElementById('videoSourceLipDiffuserRun12_000838');
-
-        var selectedAudio = document.getElementById('videoSelect').value;
+        const selectedAudio = document.getElementById("videoSelect").value;
 
         if (selectedAudio) {
-            // Set the source of the source elements, not the audio players
-            videoSourceOrig.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/orig/" + selectedAudio + ".mp4";
-            videoPlayerOrig.load(); // Load the selected audio file using the audio player
-
-            videoSourceIL2S_AVHuBERT.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_avhubert/" + selectedAudio + ".mp4";
-            videoPlayerIL2S_AVHuBERT.load(); // Load the selected audio file using the audio player
-
-            videoSourceIL2S.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s/" + selectedAudio + ".mp4";
-            videoPlayerIL2S.load(); // Load the selected audio file using the audio player
-
-            videoSourceEnhanced.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/enhanced/" + selectedAudio + ".mp4";
-            videoPlayerEnhanced.load(); // Load the selected audio file using the audio player
-
-            videoSourceLipvoicer.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipvoicer/" + selectedAudio + ".mp4";
-            videoPlayerLipvoicer.load(); // Load the selected audio file using the audio player
-
-            videoSourceDiffV2S.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/diffv2s/" + selectedAudio + ".mp4";
-            videoPlayerDiffV2S.load(); // Load the selected audio file using the audio player
-
-            videoSourceLipDiffuserRun11_7340032.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run11/7340032/" + selectedAudio + ".mp4";
-            videoPlayerLipDiffuserRun11_7340032.load(); // Load the selected audio file using the audio player
-
-            videoSourceLipDiffuserRun11_0007340_aligned.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run11/0007340_aligned/" + selectedAudio + ".mp4";
-            videoPlayerLipDiffuserRun11_0007340_aligned.load(); // Load the selected audio file using the audio player
-
-            videoSourceLipDiffuserRun12_000838.src = "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run12/000838/" + selectedAudio + ".mp4";
-            videoPlayerLipDiffuserRun12_000838.load(); // Load the selected audio file using the audio player
-
-            // This will ensure that the audio players are updating their children source elements
-            // and reloading them
+            tableConfig.forEach(section => {
+                section.rows.forEach(video => {
+                    const videoPlayer = document.getElementById(video.playerId);
+                    const videoSource = document.getElementById(video.sourceId);
+                    videoSource.src = video.baseUrl + selectedAudio + ".mp4";
+                    videoPlayer.load(); // Reload the video player with the new source
+                });
+            });
         }
     }
+
+    // Generate the table when the page loads
+    window.onload = generateTable;
 </script>
-<br>
 
 <h2 id="citation">
     Citation
