@@ -133,14 +133,14 @@ layout: default
 
 <p>Select a video file: &nbsp;&nbsp;
     <select id="videoSelect" onchange="playAudio()">
-        <option value="SWiwSBLXS3k/00002">SWiwSBLXS3k/00002</option>
-        <option value="J8FyHI00ELY/00004">J8FyHI00ELY/00004</option>
-        <option value="vXPJVwwEmiM/00008">vXPJVwwEmiM/00008</option>
-        <option value="9JKy6ZfmBn0/00002">9JKy6ZfmBn0/00002</option>
-        <option value="sxnlvwprfSc/00011">sxnlvwprfSc/00011</option>
-        <option value="8nt3edWLgIg/00004">8nt3edWLgIg/00004</option>
-        <option value="1bnzVjOJ6NM/00011">1bnzVjOJ6NM/00011</option>
-        <option value="M7KSnq0xkWY/00001">M7KSnq0xkWY/00001</option>
+        <option value="PSlBlZ3hqKc/00007">PSlBlZ3hqKc/00007</option>
+        <option value="fxbCHn6gE3U/00007">fxbCHn6gE3U/00007</option>
+        <option value="w1R4F9sSoow/00001">w1R4F9sSoow/00001</option>
+        <option value="FqrLUtIFVjs/00002">FqrLUtIFVjs/00002</option>
+        <option value="1bnzVjOJ6NM/00017">1bnzVjOJ6NM/00017</option>
+        <option value="SE97Kgi0sR4/00005">SE97Kgi0sR4/00005</option>
+        <option value="81Ub0SMxZQo/00003">81Ub0SMxZQo/00003</option>
+        <option value="Li4S1yyrsTI/00010">Li4S1yyrsTI/00010</option>
     </select>
 </p>
 
@@ -157,40 +157,26 @@ layout: default
             ]
         },
         {
-            header: ["IL2S", "IL2S (AV-HuBERT)"],
+            header: ["Noisy", "AV-Gen"],
             rows: [
-                { playerId: "p3", sourceId: "s3", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s/" },
-                { playerId: "p4", sourceId: "s4", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_avhubert/" }
+                { playerId: "p3", sourceId: "s3", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/noisy/" },
+                { playerId: "p4", sourceId: "s4", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/avgen/" }
             ]
         },
         {
-            header: ["Lipvoicer", "DiffV2S"],
+            header: ["IL2S (SSL)", "DiffV2S"],
             rows: [
-                { playerId: "p5", sourceId: "s5", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipvoicer/" },
-                { playerId: "p6", sourceId: "s6", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/diffv2s/" }
+                { playerId: "p5", sourceId: "s5", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_ssl/"},
+                { playerId: "p6", sourceId: "s6", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/diffv2/" }
             ]
         },
         {
-            header: ["LipDiffuser (run12)", "LipDiffuser (run13)"],
+            header: ["Lipvoicer", "LipDiffuser"],
             rows: [
-                { playerId: "p7", sourceId: "s7", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run12/0006291/" },
-                { playerId: "p8", sourceId: "s8", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run13/0006291/" }
+                { playerId: "p7", sourceId: "s7", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipvoicer/" },
+                { playerId: "p8", sourceId: "s8", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/" }
             ]
         },
-        {
-            header: ["LipDiffuser (run14)", "LipDiffuser (run15)"],
-            rows: [
-                { playerId: "p9", sourceId: "s9", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run14/0006291/" },
-                { playerId: "p10", sourceId: "s10", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run15/0006291/" }
-            ]
-        },
-        {
-            header: ["LipDiffuser (run16)", "LipDiffuser (edm2-film-lrs3-xs-v2-dec-k5-noft, 33554432)"],
-            rows: [
-                { playerId: "p11", sourceId: "s11", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/run16/0006291/" },
-                { playerId: "p12", sourceId: "s12", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/edm2-film-lrs3-xs-v2-dec-k5-noft/33554432/" },
-            ]
-        }
     ];
 
     // Function to generate the table dynamically
@@ -217,7 +203,7 @@ layout: default
                 videoElement.controls = true;
                 const sourceElement = document.createElement("source");
                 sourceElement.id = video.sourceId;
-                sourceElement.src = video.baseUrl + "SWiwSBLXS3k/00002.mp4"; // Default video
+                sourceElement.src = video.baseUrl + "PSlBlZ3hqKc/00007.mp4"; // Default video
                 sourceElement.type = "video/mp4";
                 videoElement.appendChild(sourceElement);
                 td.appendChild(videoElement);
