@@ -189,12 +189,12 @@ layout: default
             const headerRow = document.createElement("tr");
             section.header.forEach(headerText => {
                 const th = document.createElement("th");
-                th.textContent = headerText;
+                th.innerHTML = headerText; // Changed from textContent to innerHTML
                 headerRow.appendChild(th);
             });
             table.appendChild(headerRow);
 
-            // Add video rows
+            // Add video rows (unchanged)
             const videoRow = document.createElement("tr");
             section.rows.forEach(video => {
                 const td = document.createElement("td");
@@ -203,7 +203,7 @@ layout: default
                 videoElement.controls = true;
                 const sourceElement = document.createElement("source");
                 sourceElement.id = video.sourceId;
-                sourceElement.src = video.baseUrl + "ddxHlkIuHqg/00002.mp4"; // Default video
+                sourceElement.src = video.baseUrl + "ddxHlkIuHqg/00002.mp4";
                 sourceElement.type = "video/mp4";
                 videoElement.appendChild(sourceElement);
                 td.appendChild(videoElement);
