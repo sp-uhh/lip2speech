@@ -120,11 +120,11 @@ layout: default
 </style>
 
 <h1>
-    Video Examples
+    Audio-Visual Examples
 </h1>
 
 <p>
-    Here we provide video examples of our method compared to other methods. 
+    Here we provide audio-visual examples of our method LipDiffuser compared to other methods. 
 </p>
 
 <h2>
@@ -157,21 +157,21 @@ layout: default
             ]
         },
         {
-            header: ["Noisy", "AV-Gen"],
+            header: ["Noisy", "AV-Gen <span class='reference' data-ref='avgen'>"],
             rows: [
                 { playerId: "p3", sourceId: "s3", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/noisy/" },
                 { playerId: "p4", sourceId: "s4", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/avgen/" }
             ]
         },
         {
-            header: ["IL2S (SSL)", "DiffV2S"],
+            header: ["IL2S (SSL) <span class='reference' data-ref='il2s'>", "DiffV2S <span class='reference' data-ref='diffv2s'>"],
             rows: [
                 { playerId: "p5", sourceId: "s5", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/il2s_ssl/"},
                 { playerId: "p6", sourceId: "s6", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/diffv2s/" }
             ]
         },
         {
-            header: ["Lipvoicer", "LipDiffuser"],
+            header: ["Lipvoicer <span class='reference' data-ref='lipvoicer'>", "LipDiffuser (ours)"],
             rows: [
                 { playerId: "p7", sourceId: "s7", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipvoicer/" },
                 { playerId: "p8", sourceId: "s8", baseUrl: "https://www2.informatik.uni-hamburg.de/sp/audio/publications/lip2speech/files/lipdiffuser/" }
@@ -284,13 +284,10 @@ layout: default
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const references = {
-            "convtasnet": "Y. Luo and N. Mesgarani, “Conv-TasNet: Surpassing ideal time–frequency magnitude masking for speech separation,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol. 27, no. 8, pp. 1256–1266, 2019.",
-            "cdiffuse": "Y.-J. Lu, Z.-Q. Wang, S. Watanabe, A. Richard, C. Yu, and Y. Tsao, “Conditional diffusion probabilistic model for speech enhancement,” in IEEE International Conference on Acoustics, Speech and Signal Processing, 2022, pp. 7402–7406.",
-            "demucs": "S. Rouard, F. Massa, and A. Défossez, “Hybrid transformers for music source separation,” in IEEE International Conference on Acoustics, Speech and Signal Processing, 2023.",
-            "sgmse": "J. Richter, S. Welker, J.-M. Lemercier, B. Lay, and T. Gerkmann, “Speech enhancement and dereverberation with diffusion-based generative models,” IEEE/ACM Transactions on Audio, Speech, and Language Processing, vol. 31, pp. 2351–2364, 2023.",
-            "diffv2s": "Jeongsoo Choi, Joanna Hong, and Yong Man Ro. Diffv2s: Diffusion-based video-to-speech synthesis with vision-guided speaker embedding. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 7812–7821, 2023.",
+            "avgen": "Julius Richter, Simone Frintrop, and Timo Gerkmann. Audio-visual speech enhancement with score-based generative models. Proceedings of ITG Conference on Speech Communication, pages 275-279, 2023.",
+            "diffv2s": "Jeongsoo Choi, Joanna Hong, and Yong Man Ro. Diffv2s: Diffusion-based video-to-speech synthesis with vision-guided speaker embedding. In Proceedings of the IEEE/CVF International Conference on Computer Vision, pages 7812-7821, 2023.",
             "lipvoicer": "Yochai Yemini, Aviv Shamsian, Lior Bracha, Sharon Gannot, and Ethan Fetaya. LipVoicer: Generating speech from silent videos guided by lip reading. In International Conference on Learning Representations, 2024.",
-            "il2s": "Jeongsoo Choi, Minsu Kim, and Yong Man Ro. Intelligible lip-to-speech synthesis with speech units. In ISCA Interspeech, pages 4349–4353, 2023.",
+            "il2s": "Jeongsoo Choi, Minsu Kim, and Yong Man Ro. Intelligible lip-to-speech synthesis with speech units. In ISCA Interspeech, pages 4349-4353, 2023.",
         };
 
         // Collect keys in order of their appearance, without duplication
